@@ -245,6 +245,7 @@ max_rounds = click.option(
 src_files = click.argument(
     "src_files",
     nargs=-1,
+    is_eager=True,
     type=click.Path(exists=True, allow_dash=True),
 )
 
@@ -328,7 +329,6 @@ config = click.option(
         f"Read configuration from TOML file. By default, looks for the following "
         f"files in the given order: {', '.join(DEFAULT_CONFIG_FILE_NAMES)}."
     ),
-    is_eager=True,
     callback=override_defaults_from_config_file,
 )
 
