@@ -329,6 +329,7 @@ config = click.option(
         f"Read configuration from TOML file. By default, looks for the following "
         f"files in the given order: {', '.join(DEFAULT_CONFIG_FILE_NAMES)}."
     ),
+    is_eager=True,
     callback=override_defaults_from_config_file,
 )
 
